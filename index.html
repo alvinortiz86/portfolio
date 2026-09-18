@@ -159,7 +159,143 @@
   p{margin:0 0 14px; max-width:68ch;}
   .lede{font-size:16.5px; max-width:66ch;}
 
-  /* ===== Experience ===== */
+  /* ===== Career Timeline ===== */
+  .timeline-intro{
+    max-width:66ch;
+    margin-bottom:34px;
+  }
+  .timeline{
+    position:relative;
+  }
+  .timeline::before{
+    content:'';
+    position:absolute;
+    top:6px;
+    bottom:6px;
+    left:5px;
+    width:2px;
+    background:var(--line);
+  }
+  .timeline-item{
+    position:relative;
+    padding-left:34px;
+    padding-bottom:40px;
+  }
+  .timeline-item:last-child{
+    padding-bottom:0;
+  }
+  .timeline-item::before{
+    content:'';
+    position:absolute;
+    left:0;
+    top:4px;
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    background:var(--steel);
+    box-shadow:0 0 0 3px var(--bg-alt);
+  }
+  .timeline-dates{
+    font-size:12.5px;
+    color:var(--muted);
+    font-weight:600;
+    margin-bottom:4px;
+  }
+  .timeline-role{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:19px;
+    margin-bottom:2px;
+  }
+  .timeline-company{
+    font-size:13.5px;
+    color:var(--steel);
+    font-weight:600;
+    margin-bottom:12px;
+  }
+  .timeline-scope{
+    font-size:14.5px;
+    max-width:62ch;
+    margin-bottom:14px;
+  }
+  .timeline-lesson{
+    background:var(--bg);
+    border-left:3px solid var(--steel);
+    padding:12px 16px;
+    margin-bottom:14px;
+    max-width:62ch;
+  }
+  .lesson-label{
+    display:block;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    color:var(--steel);
+    margin-bottom:5px;
+  }
+  .timeline-lesson p{
+    font-size:14px;
+    margin:0;
+    color:var(--text);
+  }
+  details.timeline-details{
+    margin-top:6px;
+  }
+  details.timeline-details summary{
+    cursor:pointer;
+    font-size:13px;
+    font-weight:600;
+    color:var(--steel);
+    list-style:none;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    user-select:none;
+  }
+  details.timeline-details summary::-webkit-details-marker{
+    display:none;
+  }
+  details.timeline-details summary::before{
+    content:'+';
+    font-size:14px;
+    line-height:1;
+    width:17px;
+    height:17px;
+    flex-shrink:0;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    border:1px solid var(--steel);
+    border-radius:50%;
+  }
+  details.timeline-details[open] summary::before{
+    content:'\2212';
+  }
+  details.timeline-details .timeline-detail-body{
+    margin-top:14px;
+    padding-left:2px;
+  }
+  details.timeline-details .detail-subtitle{
+    font-size:12.5px;
+    font-weight:700;
+    color:var(--muted);
+    margin:14px 0 6px;
+  }
+  details.timeline-details .detail-subtitle:first-child{
+    margin-top:0;
+  }
+  details.timeline-details ul{
+    margin:0;
+    padding-left:18px;
+  }
+  details.timeline-details li{
+    font-size:14px;
+    margin-bottom:7px;
+    max-width:64ch;
+  }
+
+  /* ===== Experience (legacy job list, retained for reference) ===== */
   .job{
     display:grid;
     grid-template-columns:160px 1fr;
@@ -395,95 +531,134 @@
 
   <section class="alt">
     <div class="wrap">
-      <div class="eyebrow">Career History</div>
-      <h2>Experience</h2>
+      <div class="eyebrow">Journey</div>
+      <h2>Career Timeline</h2>
+      <p class="lede timeline-intro">Since my r&eacute;sum&eacute; already covers the full detail, here's the story behind it: what each role built on the last, and what I took from it. Expand any role below for the complete bullet-by-bullet breakdown.</p>
 
-      <div class="job">
-        <div class="job-dates">Feb 2022 – Present</div>
-        <div>
-          <div class="job-title">Delivery Manager, Implementation Services (Stripe Practice)</div>
-          <div class="job-org">Myers-Holum, Los Angeles, CA</div>
-          <ul>
-            <li>Myers-Holum is a Stripe Preferred Partner for Professional Services; contributed directly to launching Stripe's Partner Professional Services Program and to the creation of Stripe's Solutions Architect certification.</li>
-            <li>Own end-to-end payment platform integrations, from discovery through launch, for 100+ enterprise engagements spanning cards, wallets, subscriptions, and marketplace flows; architect API/webhook integration patterns, tokenization, and 3DS flows that lift authorization and approval rates (~95% client satisfaction).</li>
-            <li>Leads and coaches a 9-person team of Implementation Consultants and Integration Engineers across a 200+ account portfolio, standardizing onboarding and building an intake-to-launch operating model with KPIs (authorization rate, time-to-launch, defect rate) reviewed weekly to protect SLAs and executive visibility. The team completes 200+ projects annually (8–10 concurrent per rep), generating an estimated ~$15.5M in billable revenue over the past 4.6 years.</li>
-            <li>Partners directly with Sales to help close internally-sourced projects for Stripe users, acting as Sales Engineer to build the solution plan and lead delivery end-to-end, in addition to Stripe Professional Services pipeline work.</li>
-            <li>Partners cross-functionally with Engineering, Product, Finance, and Client Operations to translate business requirements into scalable, compliant payment experiences; built repeatable playbooks and QA frameworks that cut pre-launch defects.</li>
-            <li>Configures fraud, dispute, and SCA controls that balance conversion with compliance (PCI DSS, scheme rules), reducing chargeback exposure without degrading approval rates. Serves as subject matter expert on a fraud advisory project with Stripe, creating Payment Optimization playbooks that improve authorization rates, lower interchange costs, and help clients stay within Visa's VAMP and Mastercard's MC SAFE program thresholds.</li>
-          </ul>
-        </div>
-      </div>
+      <div class="timeline">
 
-      <div class="job">
-        <div class="job-dates">Oct 2021 – Feb 2022</div>
-        <div>
-          <div class="job-title">Principal Implementation Consultant, Stripe</div>
-          <div class="job-org">Myers-Holum, Los Angeles, CA</div>
-          <ul>
-            <li>Led client onboarding and solution design, translating business requirements into technical specifications for payment gateways, APIs, and compliance configurations across 50+ major implementations.</li>
-            <li>Owned end-to-end project management across cross-functional teams, delivering high-quality payment solutions on time; implemented risk-mitigation and QA testing standards that improved outcomes for 95% of clients served.</li>
-          </ul>
+        <div class="timeline-item">
+          <div class="timeline-dates">Oct 2021 &ndash; Present</div>
+          <div class="timeline-role">Delivery Manager, Implementation Services (Stripe Practice)</div>
+          <div class="timeline-company">Myers-Holum &middot; promoted from Principal Implementation Consultant</div>
+          <p class="timeline-scope">Scaled a delivery team from ad-hoc execution to a repeatable operating model, earning Stripe's trust to take on their most complex integrations for some of their most valuable logos. Built deep subject-matter expertise across core payment products, including Terminal and Billing, with specialization in select verticals.</p>
+          <div class="timeline-lesson">
+            <span class="lesson-label">What I Took From This Role</span>
+            <p>How trust compounds: proving reliability on smaller engagements is what earns you the room to lead the most complex, highest-stakes integrations. And how building genuine subject-matter depth across products and verticals, not just one, is what makes that trust durable rather than a one-time win.</p>
+          </div>
+          <details class="timeline-details">
+            <summary>Detailed Experience</summary>
+            <div class="timeline-detail-body">
+              <div class="detail-subtitle">Delivery Manager, Implementation Services (Stripe Practice) &middot; Feb 2022 &ndash; Present</div>
+              <ul>
+                <li>Myers-Holum is a Stripe Preferred Partner for Professional Services; contributed directly to launching Stripe's Partner Professional Services Program and to the creation of Stripe's Solutions Architect certification.</li>
+                <li>Own end-to-end payment platform integrations, from discovery through launch, for 100+ enterprise engagements spanning cards, wallets, subscriptions, and marketplace flows; architect API/webhook integration patterns, tokenization, and 3DS flows that lift authorization and approval rates (~95% client satisfaction).</li>
+                <li>Leads and coaches a 9-person team of Implementation Consultants and Integration Engineers across a 200+ account portfolio, standardizing onboarding and building an intake-to-launch operating model with KPIs (authorization rate, time-to-launch, defect rate) reviewed weekly to protect SLAs and executive visibility. The team completes 200+ projects annually (8&ndash;10 concurrent per rep), generating an estimated ~$15.5M in billable revenue over the past 4.6 years.</li>
+                <li>Partners directly with Sales to help close internally-sourced projects for Stripe users, acting as Sales Engineer to build the solution plan and lead delivery end-to-end, in addition to Stripe Professional Services pipeline work.</li>
+                <li>Partners cross-functionally with Engineering, Product, Finance, and Client Operations to translate business requirements into scalable, compliant payment experiences; built repeatable playbooks and QA frameworks that cut pre-launch defects.</li>
+                <li>Configures fraud, dispute, and SCA controls that balance conversion with compliance (PCI DSS, scheme rules), reducing chargeback exposure without degrading approval rates. Serves as subject matter expert on a fraud advisory project with Stripe, creating Payment Optimization playbooks that improve authorization rates, lower interchange costs, and help clients stay within Visa's VAMP and Mastercard's MC SAFE program thresholds.</li>
+              </ul>
+              <div class="detail-subtitle">Principal Implementation Consultant, Stripe &middot; Oct 2021 &ndash; Feb 2022</div>
+              <ul>
+                <li>Led client onboarding and solution design, translating business requirements into technical specifications for payment gateways, APIs, and compliance configurations across 50+ major implementations.</li>
+                <li>Owned end-to-end project management across cross-functional teams, delivering high-quality payment solutions on time; implemented risk-mitigation and QA testing standards that improved outcomes for 95% of clients served.</li>
+              </ul>
+            </div>
+          </details>
         </div>
-      </div>
 
-      <div class="job">
-        <div class="job-dates">Jun 2020 – Oct 2021</div>
-        <div>
-          <div class="job-title">Director of Ops and Payments</div>
-          <div class="job-org">Stockpile, United States</div>
-          <ul>
-            <li>Directed company-wide payments and operations for a consumer fintech (~$500M in annual processing volume and ~$2M in operating costs), replatforming the payments stack in under three weeks to avert an imminent processor shutdown, cutting operating expense by ~15%, sustaining a ~2-hour first response with 90%+ CSAT, and putting durable governance around vendors, compliance, and support.</li>
-            <li>Led the end-to-end payments vendor migration (contracting, cutover playbook, data mapping, and settlement/reconciliation validation), delivering production go-live in under three weeks with zero critical incidents.</li>
-            <li>Introduced Co-pilot AI for internal agent automation and customer triaging, streamlining support workflows and reducing manual effort.</li>
-            <li>Built an operations control plane (SLA dashboards, incident response runbooks, queue triage, and new IVR/customer care routing) to sustain service levels while scaling volume and complexity.</li>
-            <li>Negotiated and managed external partnerships, including the program bank relationship with Green Dot Bank, aligning Finance, Legal, Risk, and Engineering on commercials, SLAs, and launch criteria.</li>
-            <li>Established compliance and quality frameworks across payments operations (change management, QA sign-offs, and dispute/chargeback workflows), reducing rework and shortening time-to-release.</li>
-          </ul>
+        <div class="timeline-item">
+          <div class="timeline-dates">Jun 2020 &ndash; Oct 2021</div>
+          <div class="timeline-role">Director of Ops and Payments</div>
+          <div class="timeline-company">Stockpile</div>
+          <p class="timeline-scope">Directed payments and operations for a consumer fintech; spearheaded the onboarding process to launch a new debit card issuing product for kids, and replatformed the payments stack in under three weeks to avert a processor shutdown.</p>
+          <div class="timeline-lesson">
+            <span class="lesson-label">What I Took From This Role</span>
+            <p>How to move fast under real pressure without breaking customer trust: speed and governance aren't actually in tension if you build both at once.</p>
+          </div>
+          <details class="timeline-details">
+            <summary>Detailed Experience</summary>
+            <div class="timeline-detail-body">
+              <ul>
+                <li>Directed company-wide payments and operations for a consumer fintech (~$500M in annual processing volume and ~$2M in operating costs), replatforming the payments stack in under three weeks to avert an imminent processor shutdown, cutting operating expense by ~15%, sustaining a ~2-hour first response with 90%+ CSAT, and putting durable governance around vendors, compliance, and support.</li>
+                <li>Led the end-to-end payments vendor migration (contracting, cutover playbook, data mapping, and settlement/reconciliation validation), delivering production go-live in under three weeks with zero critical incidents.</li>
+                <li>Introduced Co-pilot AI for internal agent automation and customer triaging, streamlining support workflows and reducing manual effort.</li>
+                <li>Built an operations control plane (SLA dashboards, incident response runbooks, queue triage, and new IVR/customer care routing) to sustain service levels while scaling volume and complexity.</li>
+                <li>Negotiated and managed external partnerships, including the program bank relationship with Green Dot Bank, aligning Finance, Legal, Risk, and Engineering on commercials, SLAs, and launch criteria.</li>
+                <li>Established compliance and quality frameworks across payments operations (change management, QA sign-offs, and dispute/chargeback workflows), reducing rework and shortening time-to-release.</li>
+              </ul>
+            </div>
+          </details>
         </div>
-      </div>
 
-      <div class="job">
-        <div class="job-dates">Mar 2019 – Jun 2020</div>
-        <div>
-          <div class="job-title">Sales Engineer</div>
-          <div class="job-org">Payrix, California</div>
-          <ul>
-            <li>Focused on improving prospective partners' payments experience, adding payment functionality, and increasing their revenue on the Payrix platform; facilitated the integration process by providing technical assistance to both the Sales team and Implementation Engineers.</li>
-            <li>Provided feedback to product management and development on product direction, and shared solutions developed with partners to inform feature prioritization; evaluated partner API integration requirements and composed scopes of work for the Implementations team.</li>
-            <li>Maintained and supported API gateway infrastructure, merchant onboarding, and associated tools (e.g., Postman Collections); wrote and built continuous delivery pipelines to manage and automate the lifecycle of prospective partners and closed deals.</li>
-            <li>Responsible for creating compelling, tailored product demonstrations and executing successful Proofs-of-Concept (PoCs) that clearly proved the platform's value and technical feasibility to prospective clients.</li>
-          </ul>
+        <div class="timeline-item">
+          <div class="timeline-dates">Mar 2019 &ndash; Jun 2020</div>
+          <div class="timeline-role">Sales Engineer</div>
+          <div class="timeline-company">Payrix</div>
+          <p class="timeline-scope">Bridged Sales and Implementation Engineering to get prospective partners live on the Payrix platform.</p>
+          <div class="timeline-lesson">
+            <span class="lesson-label">What I Took From This Role</span>
+            <p>How to translate technical capability into a story a prospective partner actually cares about: the best demo proves value, not just features.</p>
+          </div>
+          <details class="timeline-details">
+            <summary>Detailed Experience</summary>
+            <div class="timeline-detail-body">
+              <ul>
+                <li>Focused on improving prospective partners' payments experience, adding payment functionality, and increasing their revenue on the Payrix platform; facilitated the integration process by providing technical assistance to both the Sales team and Implementation Engineers.</li>
+                <li>Provided feedback to product management and development on product direction, and shared solutions developed with partners to inform feature prioritization; evaluated partner API integration requirements and composed scopes of work for the Implementations team.</li>
+                <li>Maintained and supported API gateway infrastructure, merchant onboarding, and associated tools (e.g., Postman Collections); wrote and built continuous delivery pipelines to manage and automate the lifecycle of prospective partners and closed deals.</li>
+                <li>Responsible for creating compelling, tailored product demonstrations and executing successful Proofs-of-Concept (PoCs) that clearly proved the platform's value and technical feasibility to prospective clients.</li>
+              </ul>
+            </div>
+          </details>
         </div>
-      </div>
 
-      <div class="job">
-        <div class="job-dates">Dec 2017 – Mar 2019</div>
-        <div>
-          <div class="job-title">Director of Strategic Partnerships</div>
-          <div class="job-org">Currency, Los Angeles, CA</div>
-          <ul>
-            <li>Focused on improving merchants' payments experience by increasing approval rates and lowering fees across a wide range of transaction values and payment methods, setting up functionality that let partners drive revenue and grow their business on Currency's platform.</li>
-            <li>Established banking partners for both credit card and eCheck processing with built-in redundancy, and registered and guided the company through becoming a payment facilitator, including risk models, policies, and procedures.</li>
-            <li>Led the product roadmap for platform functionality and built partner/operating-model strategy (PayFac vs. ISV/referral): selecting acquirers/PSPs, negotiating pricing and SLAs, and defining routing/tokenization/3DS policy to improve authorization rates and reduce processing fees.</li>
-            <li>Created and maintained AML, OFAC, and KYC policies, led fraud and chargeback mitigation, and achieved PCI Level 1 certification to maintain the highest level of security for customer information.</li>
-            <li>Walked partners through PayFac/Aggregator registration or advised alternative models (ISV/referral), and advised on functionality spanning EMV, eCommerce, mCommerce, MOTO, real-time payments, B2B payments, tokenization, and fast onboarding of new MIDs.</li>
-          </ul>
+        <div class="timeline-item">
+          <div class="timeline-dates">Dec 2017 &ndash; Mar 2019</div>
+          <div class="timeline-role">Director of Strategic Partnerships</div>
+          <div class="timeline-company">Currency</div>
+          <p class="timeline-scope">Built the banking, risk, and PayFac foundation a B2B payments platform ran on.</p>
+          <div class="timeline-lesson">
+            <span class="lesson-label">What I Took From This Role</span>
+            <p>How early risk and compliance decisions quietly shape everything a company can build on top of them years later.</p>
+          </div>
+          <details class="timeline-details">
+            <summary>Detailed Experience</summary>
+            <div class="timeline-detail-body">
+              <ul>
+                <li>Focused on improving merchants' payments experience by increasing approval rates and lowering fees across a wide range of transaction values and payment methods, setting up functionality that let partners drive revenue and grow their business on Currency's platform.</li>
+                <li>Established banking partners for both credit card and eCheck processing with built-in redundancy, and registered and guided the company through becoming a payment facilitator, including risk models, policies, and procedures.</li>
+                <li>Led the product roadmap for platform functionality and built partner/operating-model strategy (PayFac vs. ISV/referral): selecting acquirers/PSPs, negotiating pricing and SLAs, and defining routing/tokenization/3DS policy to improve authorization rates and reduce processing fees.</li>
+                <li>Created and maintained AML, OFAC, and KYC policies, led fraud and chargeback mitigation, and achieved PCI Level 1 certification to maintain the highest level of security for customer information.</li>
+                <li>Walked partners through PayFac/Aggregator registration or advised alternative models (ISV/referral), and advised on functionality spanning EMV, eCommerce, mCommerce, MOTO, real-time payments, B2B payments, tokenization, and fast onboarding of new MIDs.</li>
+              </ul>
+            </div>
+          </details>
         </div>
-      </div>
 
-      <div class="job">
-        <div class="job-dates">Mar 2014 – Dec 2017</div>
-        <div>
-          <div class="job-title">Senior Support Technician</div>
-          <div class="job-org">Payscout, Greater Los Angeles Area</div>
-          <ul>
-            <li>Transformed enterprise merchant payments at Payscout from a cost center into a growth engine, driving $150K+ in new monthly revenue, cutting cost to accept through interchange optimization, and enabling compliant global acceptance across card-present and card-not-present channels.</li>
-            <li>Managed full-cycle enterprise engagements (prospecting, solution design, contracting, and onboarding), building business cases and RFPs and aligning executives; owned pipeline and delivery while improving authorization rate and time-to-go-live.</li>
-            <li>Reduced processing expense and dispute exposure by implementing interchange optimization (Level 2/3), fine-tuning pricing and acquirer/PSP setups, and standing up chargeback and fraud playbooks, lowering effective fees and improving win rates for card-not-present transactions.</li>
-            <li>Enabled international processing and partner integrations (gateway APIs, eCheck/ACH, wallets) with PCI DSS controls and merchant underwriting, including high-risk approvals, expanding global eCommerce/mCommerce coverage and accelerating merchant onboarding.</li>
-            <li>Onboarded and managed ISV partnerships.</li>
-          </ul>
+        <div class="timeline-item">
+          <div class="timeline-dates">Mar 2014 &ndash; Dec 2017</div>
+          <div class="timeline-role">Senior Support Technician</div>
+          <div class="timeline-company">Payscout</div>
+          <p class="timeline-scope">Turned enterprise merchant payments from a cost center into a growth engine.</p>
+          <div class="timeline-lesson">
+            <span class="lesson-label">What I Took From This Role</span>
+            <p>How to turn a cost center into a growth engine: revenue growth and risk reduction aren't opposing goals when you optimize the right levers.</p>
+          </div>
+          <details class="timeline-details">
+            <summary>Detailed Experience</summary>
+            <div class="timeline-detail-body">
+              <ul>
+                <li>Transformed enterprise merchant payments at Payscout from a cost center into a growth engine, driving $150K+ in new monthly revenue, cutting cost to accept through interchange optimization, and enabling compliant global acceptance across card-present and card-not-present channels.</li>
+                <li>Managed full-cycle enterprise engagements (prospecting, solution design, contracting, and onboarding), building business cases and RFPs and aligning executives; owned pipeline and delivery while improving authorization rate and time-to-go-live.</li>
+                <li>Reduced processing expense and dispute exposure by implementing interchange optimization (Level 2/3), fine-tuning pricing and acquirer/PSP setups, and standing up chargeback and fraud playbooks, lowering effective fees and improving win rates for card-not-present transactions.</li>
+                <li>Enabled international processing and partner integrations (gateway APIs, eCheck/ACH, wallets) with PCI DSS controls and merchant underwriting, including high-risk approvals, expanding global eCommerce/mCommerce coverage and accelerating merchant onboarding.</li>
+                <li>Onboarded and managed ISV partnerships.</li>
+              </ul>
+            </div>
+          </details>
         </div>
+
       </div>
     </div>
   </section>
